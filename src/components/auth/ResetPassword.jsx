@@ -8,7 +8,7 @@ const ResetPassword = () => {
   const params = useParams();
   const token = params.token;
   const tokenEncode = encodeURIComponent(token);
-  
+
   const [data, setData] = useState({
     password: "",
     confirmPassword: "",
@@ -38,6 +38,7 @@ const ResetPassword = () => {
       navigate("/login");
     } catch (error) {
       console.log(error);
+      setMessage(error.response.data);
     }
   };
 
@@ -47,7 +48,7 @@ const ResetPassword = () => {
         <h2 style={{ textAlign: "center" }}>RESET PASSWORD </h2>
         <label htmlFor="">New Password</label>
         <input
-          type="text"
+          type="password"
           placeholder="password"
           name="password"
           value={data.password}
@@ -56,7 +57,7 @@ const ResetPassword = () => {
         />
         <label htmlFor="">Confirm Password</label>
         <input
-          type="text"
+          type="password"
           placeholder="confirm password"
           name="confirmPassword"
           value={data.confirmPassword}

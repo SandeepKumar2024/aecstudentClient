@@ -69,7 +69,7 @@ const router = createBrowserRouter([
 const App = () => {
   return (
     <Provider store={store}>
-      <div className="app" style={{width:"99vw",margin:"0px",padding:"0px"}}>
+      <div className="app" >
         <RouterProvider router={router} />
       </div>
     </Provider>

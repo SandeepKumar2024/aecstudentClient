@@ -29,15 +29,11 @@ const Register = () => {
       await axios
         .post(`${BASE_URL}/user/register`,  input )
         .then((res) => navigate("/verifyEmail"))
-        .catch((err) => console.log(err));
+        .catch((err) => setError(err.response.data.message));
     } catch (error) {
-      console.log(error.response);
-      if (error.response) {
-        const { data, status } = error.response;
-        setError(data.message);
-      } else {
-        console.log("Error");
-      }
+      console.log(error);
+
+      
     }
   };
 

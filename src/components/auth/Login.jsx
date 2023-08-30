@@ -5,8 +5,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { login, reset } from "../../reducers/userReducers/authSlice";
 
 const Login = () => {
-
-  
   const [data, setData] = useState({
     email: "",
     password: "",
@@ -29,6 +27,7 @@ const Login = () => {
   const isAdmin = user?.user?.isAdmin;
 
   //admin check
+ 
 
   const { email, password } = data;
 
@@ -47,7 +46,8 @@ const Login = () => {
       email,
       password,
     };
-    console.log(userData);
+    
+    setMessage(message);
 
     dispatch(login(userData));
   };

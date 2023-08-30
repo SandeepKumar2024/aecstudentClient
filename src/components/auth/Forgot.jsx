@@ -23,7 +23,8 @@ const Forgot = () => {
       setSuccess(true);
       console.log(res);
     } catch (error) {
-      console.log(error);
+      console.log(error.response.data);
+      setMessage(error.response.data);
     }
   };
 
